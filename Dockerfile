@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN nim compile greetings.nim
+RUN nim c -d:release greetings.nim
 
 FROM alpine AS app
 COPY --from=builder /app/greetings /app/greetings
