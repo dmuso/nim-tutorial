@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  builder:
+    build:
+      context: .
+      target: builder
+    volumes:
+      - ".:/app"
+
+  app:
+    build:
+      context: .
+      target: app
+    command: /app/greetings
